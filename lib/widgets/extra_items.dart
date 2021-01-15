@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ExtraIconsRow extends StatelessWidget {
+  final bool showLabels;
+
+  const ExtraIconsRow({Key key, this.showLabels = true}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -8,20 +12,20 @@ class ExtraIconsRow extends StatelessWidget {
       children: [
         Column(
           children: [
-            IconButton(icon: Image.asset("assets/ic_aboutus.png"), onPressed: null,iconSize: 40, tooltip: "About Us",),
-            Text("About US",style: TextStyle(color: Colors.white),)
+            IconButton(icon: Image.asset("assets/icons/ic_aboutus.png"), onPressed: null,iconSize: 40, tooltip: "About Us",),
+            Visibility(child: Text("About US",style: TextStyle(color: Colors.white),) , visible: showLabels,)
           ],
         ),
         Column(
           children: [
-            IconButton(icon: Image.asset("assets/ic_locator.png"), onPressed: null,iconSize: 40,),
-            Text("ATM Locator",style: TextStyle(color: Colors.white),)
+            IconButton(icon: Image.asset("assets/icons/ic_locator.png"), onPressed: null,iconSize: 40,),
+            Visibility(child: Text("ATM Locator",style: TextStyle(color: Colors.white),) , visible: showLabels)
           ],
         ),
         Column(
           children: [
-            IconButton(icon: Image.asset("assets/ic_phone.png"), onPressed: null,iconSize: 40,),
-            Text("Contact US",style: TextStyle(color: Colors.white),)
+            IconButton(icon: Image.asset("assets/icons/ic_phone.png"), onPressed: null,iconSize: 40,),
+            Visibility(child:Text("Contact US",style: TextStyle(color: Colors.white),) , visible: showLabels)
           ],
         )
       ],
